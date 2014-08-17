@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Journals {% endblock %}
+{% block journalsactive %} class="active" {% endblock %}
+{% block content %}
+      <div class="container">
+        <h1>Journals List</h1>
+        <p>This is the list of journals currently recognized by the app</p>
+        
+        {% if journals %}
+        <ul>
+            {% for journal in journals %}
+            <li>{{ journal }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+{% endblock %}

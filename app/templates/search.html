@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Search {% endblock %}
+{% block searchactive %} class="active" {% endblock %}
+{% block content %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, Scientist!</h1>
+        <p>This is a simple web app that aims to give you a link to the web page of an article given a citation.</p>
+
+        <p>Many papers don't have any links in the References and so it can be annoying to find a referenced article,
+        this is why I built this, just paste the citation as is and you'll be one click away from the cited article</p>
+        <form action="" method="POST">
+           <div class="form-group">
+             <label for="citation">Citation:</label>     
+             {% if citation %}
+             <input type="text" class="form-control input-lg" id="citation" name="citation" value="{{ citation }}">   
+             {% else %}
+             <input type="text" class="form-control input-lg" id="citation" name="citation" placeholder="Alan H. Guth,  Phys.Rev. D23 (1981) 347-356">   
+             {% endif %}
+           </div> 
+           <button type="submit" class="btn btn-primary btn-lg">Search!</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+    {% if citation %}
+        <p> Result for: {{ citation }} </p>
+        <hr>
+      {% if url %}
+        <h1>Here's the link!<h1>
+        <h1><a target="_blank" href="{{ url }}">{{ url }}</a></h1>
+      {% else %}
+        <h1> No link found! Sorry </h1>
+      {% endif %}
+    {% endif %}
+    </div>
+{% endblock %}
