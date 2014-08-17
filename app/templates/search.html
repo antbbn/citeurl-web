@@ -11,7 +11,7 @@
         this is why I built this, just paste the citation as is and you'll be one click away from the cited article</p>
         <form action="" method="POST">
            <div class="form-group">
-             <label for="citation">Citation:</label>     
+             <label class="sr-only" for="citation">Citation:</label>     
              {% if citation %}
              <input type="text" class="form-control input-lg" id="citation" name="citation" value="{{ citation }}">   
              {% else %}
@@ -26,9 +26,8 @@
     <div class="container">
     {% if citation %}
         <p> Result for: {{ citation }} </p>
-        <hr>
       {% if url %}
-        <h1>Here's the link!<h1>
+        <h2>Journal: {{ journal }}<h2>
         <h1><a target="_blank" href="{{ url }}">{{ url }}</a></h1>
       {% else %}
         <h1> No link found! Sorry </h1>

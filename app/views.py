@@ -9,6 +9,7 @@ from app import app
 def search():
     url = None
     citation = None
+    journal = None
     if request.method == 'POST':
         citation = request.form['citation']
         
@@ -16,9 +17,10 @@ def search():
           obj = source()
           if sources.match(obj,citation):
             url = obj.urls()
+            journal = obj.journal_name
             break
 
-    return render_template("search.html", url=url, citation=citation)
+    return render_template("search.html", url=url, journal=journal, citation=citation)
 
 
 @app.route('/journals')
