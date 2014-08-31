@@ -19,6 +19,9 @@ def search():
             url = obj.urls()
             journal = obj.journal_name
             break
+        
+        if url is None:
+          print "NOT FOUND: {}".format(citation)
 
     return render_template("search.html", url=url, journal=journal, citation=citation)
 

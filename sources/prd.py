@@ -7,7 +7,7 @@ class matcher:
               "Phys[. ]+Rev[. ]+D[ ,]*(?P<issue>\d+)[, (]+(?P<year>\d+)[ ),]+(?P<papid>\d+)",
               "Phys[. ]+Rev[. ]+D[ ,]*(?P<issue>\d+)[, ]+(?P<papid>\d+)",
             ]
-  journal_name = "Physics Review D"
+  journal_name = "Physical Review D"
 
   def urls(self):
     url =  "http://journals.aps.org/prd/abstract/10.1103/PhysRevD.{issue}.{papid}".format(issue=self.issue,papid=self.papid)
