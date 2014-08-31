@@ -1,7 +1,7 @@
 class matcher:
   fields = ['issue','papid']
   patterns = [
-              "Phys[. ]+Rev[. ]+Lett[. ,]*(?P<issue>\d+)[, (]+(?P<year>\d+)[ ),]+(?P<papid>\d+)",
+              "Phys[. ]+Rev[. ]+Lett[. ,]*(?P<issue>\d+)[, ]+\((?P<year>\d+)\)[ ,]+(?P<papid>\d+)",
               "Phys[. ]+Rev[. ]+Lett[. ,]*(?P<issue>\d+)[, ]+(?P<papid>\d+)",
             ]
   journal_name = "Physical Review Letters"
