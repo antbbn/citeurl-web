@@ -6,6 +6,7 @@ import apj
 import jcap
 import prl
 import prb
+import nature
 
 list = []
 list.append(mnras.matcher)
@@ -14,6 +15,7 @@ list.append(apj.matcher)
 list.append(jcap.matcher)
 list.append(prl.matcher)
 list.append(prb.matcher)
+list.append(nature.matcher)
 
 def match(obj, cit):
   for pattern in obj.patterns:
